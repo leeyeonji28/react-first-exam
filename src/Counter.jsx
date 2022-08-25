@@ -7,7 +7,8 @@ const Counter = ({counter, setCounter}) => {
         <button
             onClick={() => {
                 setCounter(counter + 1);
-             }}
+            }}
+            className="btn btn-outline btn-success"
         >Click me :)</button>
     </div>)
 }
