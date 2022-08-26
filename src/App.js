@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [counter, setCounter] = useState(0);
   const [searchWord, serSearchWord] = useState("");
+  const [obj, setObj] = useState({ ref: "name" });
   const inputChange = (e) => {
     serSearchWord(e.target.value);
   };
@@ -39,6 +40,25 @@ function App() {
           Click :)
         </button>
       </div>
+      <div>{obj.ref}</div>
+      <button
+        className="btn"
+        onClick={() => {
+          setObj((prev) => {
+            return { ...prev, ref: "name2" };
+          });
+        }}
+      >
+        오브젝트 변경
+      </button>
+      <button
+        className="btn"
+        onClick={() => {
+          console.log(obj);
+        }}
+      >
+        console
+      </button>
     </div>
   );
 }
